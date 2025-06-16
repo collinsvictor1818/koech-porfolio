@@ -3,24 +3,26 @@ import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
+import { Skills } from "@/components/Skills";
 import { Contact } from "@/components/Contact";
-import { createClient } from "@supabase/supabase-js";
-
-const supabaseUrl = "https://vqwcqahyfyaokipspqbc.supabase.co"; // Your Supabase URL
-const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZxd2NxYWh5Znlhb2tpcHNwcWJjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzczNDU4MDgsImV4cCI6MjA1MjkyMTgwOH0.lXKyR7epTth4QAo7IjUvBvZ2VPU45jF1qi1-_Sg5_7I"; // Replace with your Supabase Anon Key
-const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
-      <Navigation />
-      <main className="pt-16">
-        <Hero />
-        <About />
-        <Experience />
-        <Projects />
-        <Contact />
-      </main>
+    <div className="relative min-h-screen w-full bg-[#010936]">
+      {/* Dotted Overlay */}
+      <div className="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(#ffffff33_1px,transparent_1px)] bg-[size:15px_15px] [mask-image:radial-gradient(circle_145%_at_50%_50%,#000_70%,transparent_110%)]"></div>
+      
+      <div className="relative z-10">
+        <Navigation />
+        <main className="pt-16">
+          <Hero />
+          <About />
+          <Skills />
+          <Experience />
+          <Projects />
+          <Contact />
+        </main>
+      </div>
     </div>
   );
 };
