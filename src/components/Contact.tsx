@@ -16,13 +16,13 @@ export const Contact = () => {
       label: "Phone",
       value: "+254 758 214 490",
       href: "tel:+254758214490",
-      color: "bg-[#003a63]"
+      color: "bg-[#ff4940]"
     },
     {
       icon: MapPin,
       label: "Location",
       value: "Nairobi, Kenya",
-      href: null,
+      href: null,    
       color: "bg-[#ff4940]"
     }
   ];
@@ -33,14 +33,14 @@ export const Contact = () => {
       label: "GitHub",
       value: "@collinsvictor1818",
       href: "https://github.com/collinsvictor1818",
-      color: "bg-[#003a63]"
+      color: "bg-[#ff4940]"
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
       value: "Collins Koech",
       href: "https://www.linkedin.com/in/collins-koech-2a6069180/",
-      color: "bg-[#003a63]"
+      color: "bg-[#ff4940]"
     },
     {
       icon: MessageCircle,
@@ -220,7 +220,7 @@ export const Contact = () => {
 
                 <Button
                   variant="outline"
-                  className="w-full border-[#003a63] text-[#003a63] hover:bg-[#003a63]/10 py-3 rounded-full font-medium flex items-center justify-center space-x-2 font-['Gilmer']"
+                  className="w-full border-[#003a63] text-[#003a63] hover:bg-[#ff4940]/10 py-3 rounded-full font-medium flex items-center justify-center space-x-2 font-['Gilmer']"
                   onClick={() => window.open('https://calendly.com/collinskoech', '_blank')}
                 >
                   <Calendar className="w-4 h-4" />

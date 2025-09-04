@@ -13,7 +13,7 @@ export const About = () => {
       icon: Users,
       title: "Team Leadership",
       description: "Successfully leading cross-functional engineering teams",
-      color: "bg-[#003a63]"
+      color: "bg-[#ff4940]"
     },
     {
       icon: Award,
@@ -25,7 +25,7 @@ export const About = () => {
       icon: Target,
       title: "Results-Oriented",
       description: "Consistently delivering innovative solutions on time",
-      color: "bg-[#003a63]"
+      color: "bg-[#ff4940]"
     }
   ];
 
@@ -75,7 +75,7 @@ export const About = () => {
 
             {/* Education & Location */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
-              <div className="p-4 bg-white/10 rounded-full border border-[#ff4940]/30">
+              <div className="p-4 bg-white/10 rounded-xl border border-[#ff4940]/30">
                 <div className="flex items-center space-x-3 mb-2">
                   <div className="bg-[#ff4940] p-2 rounded-full">
                     <GraduationCap className="w-4 h-4 text-white" />
@@ -87,9 +87,9 @@ export const About = () => {
                 <p className="text-xs text-white/60 font-['Gilmer']">Kenyatta University (2019-2023)</p>
               </div>
               
-              <div className="p-4 bg-white/10 rounded-full border border-[#ff4940]/30">
+              <div className="p-4 bg-white/10 rounded-xl border border-[#ff4940]/30">
                 <div className="flex items-center space-x-3 mb-2">
-                  <div className="bg-[#003a63] p-2 rounded-full">
+                  <div className="bg-[#ff4940] p-2 rounded-full">
                     <MapPin className="w-4 h-4 text-white" />
                   </div>
                   <h4 className="font-semibold text-white font-['Gilmer']">Location</h4>

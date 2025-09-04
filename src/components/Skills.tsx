@@ -18,7 +18,7 @@ export const Skills = () => {
     {
       title: "Cross-Platform",
       icon: Code2,
-      color: "bg-[#003a63]",
+      color: "bg-[#ff4940]",
       skills: [
         { name: "Flutter", level: 95, description: "Primary framework" },
         { name: "Dart", level: 92, description: "Flutter's language" },
@@ -39,7 +39,7 @@ export const Skills = () => {
     {
       title: "Backend & Databases",
       icon: Database,
-      color: "bg-[#003a63]",
+      color: "bg-[#ff4940]",
       skills: [
         { name: "Python", level: 75, description: "Backend development" },
         { name: "RESTful APIs", level: 85, description: "API integration" },
@@ -64,7 +64,7 @@ export const Skills = () => {
     {
       title: "Core Competencies",
       icon: Users,
-      color: "bg-[#003a63]",
+      color: "bg-[#ff4940]",
       skills: [
         { name: "Team Leadership", level: 92, description: "Leading engineering teams" },
         { name: "UX/UI Principles", level: 80, description: "User experience design" },

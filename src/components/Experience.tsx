@@ -34,7 +34,7 @@ const Experience = () => {
         "Applied excellent object-oriented design and analysis skills for scalable architecture"
       ],
       technologies: ["Flutter", "AI/ML", "Data Pipelines", "OOD", "Cross-Platform"],
-      color: "bg-[#003a63]",
+      color: "bg-[#ff4940]",
       icon: Zap
     },
     {
@@ -68,7 +68,7 @@ const Experience = () => {
         "Gained international experience working with German engineering standards"
       ],
       technologies: ["Software Design Patterns", "External Integrations", "Proof-of-Concept", "Quality Code"],
-      color: "bg-[#003a63]",
+      color: "bg-[#ff4940]",
       icon: Award
     }
   ];
@@ -217,7 +217,7 @@ const Experience = () => {
                 title: "Leadership Growth",
                 description: "Evolved from individual contributor to senior engineering leader",
                 icon: Users,
-                color: "bg-[#003a63]"
+                color: "bg-[#ff4940]"
               },
               {
                 title: "Technical Excellence",

@@ -37,14 +37,14 @@ export const Navigation = () => {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-slate-900/95 backdrop-blur-md shadow-lg border-b border-[#ff4940]/20"
-          : "bg-transparent"
-      }`}
+      className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 w-auto"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
+      <div className={`transition-all duration-300 ${
+        scrolled
+          ? "bg-slate-900/95 backdrop-blur-md shadow-xl border border-[#ff4940]/20"
+          : "bg-slate-900/80 backdrop-blur-md shadow-lg border border-[#ff4940]/10"
+      } rounded-full px-6 py-3 w-fit mx-auto`}>
+        <div className="flex justify-between items-center">
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
@@ -55,7 +55,7 @@ export const Navigation = () => {
               <div className="w-10 h-10 bg-[#ff4940] rounded-full flex items-center justify-center">
                 <Code2 className="w-6 h-6 text-white" />
               </div>
-              <div className="absolute -top-1 -right-1 w-5 h-5 bg-[#003a63] rounded-full flex items-center justify-center">
+              <div className="absolute -top-1 -right-1 w-5 h-5 bg-[#ff4940] rounded-full flex items-center justify-center">
                 <Smartphone className="w-3 h-3 text-white" />
               </div>
             </div>
@@ -66,14 +66,14 @@ export const Navigation = () => {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-2">
+          <div className="hidden md:flex items-center space-x-1">
             {navItems.map((item) => (
               <motion.button
                 key={item.href}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => scrollToSection(item.href)}
-                className="text-gray-300 hover:text-white hover:bg-[#ff4940] px-4 py-2 rounded-full transition-all duration-200 relative group font-['Gilmer']"
+                className="text-gray-300 hover:text-white hover:bg-[#ff4940] px-3 py-2 rounded-full transition-all duration-200 relative group font-['Gilmer'] text-sm"
               >
                 {item.label}
               </motion.button>
@@ -96,7 +96,7 @@ export const Navigation = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden border-t border-[#ff4940]/20 py-4"
+              className="md:hidden border-t border-[#ff4940]/20 py-4 mt-3"
             >
               {navItems.map((item, index) => (
                 <motion.button

@@ -36,7 +36,7 @@ export const Hero = () => {
             repeat: Infinity,
             ease: "linear",
           }}
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#003a63]/10 rounded-full blur-3xl"
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#ff4940]/10 rounded-full blur-3xl"
         />
       </div>
 
@@ -111,7 +111,7 @@ export const Hero = () => {
               <div className="text-sm text-gray-400 font-['Gilmer']">Projects Completed</div>
             </div>
             <div className="text-center bg-slate-800/50 rounded-full py-4 px-2">
-              <div className="text-3xl font-bold text-[#003a63] font-['Gilmer']">5K+</div>
+              <div className="text-3xl font-bold text-white font-['Gilmer']">5K+</div>
               <div className="text-sm text-gray-400 font-['Gilmer']">Users Impacted</div>
             </div>
           </motion.div>
@@ -131,9 +131,8 @@ export const Hero = () => {
               Get In Touch
             </Button>
             <Button
-              variant="outline"
-              className="border-[#003a63] text-[#003a63] hover:bg-[#003a63]/10 px-8 py-3 rounded-full font-medium transition-all duration-300 font-['Gilmer']"
-            >
+              className="bg-[#ff4940] hover:bg-[#ff4940]/80 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 font-['Gilmer']"
+              >
               <Download className="w-4 h-4 mr-2" />
               Download CV
             </Button>
@@ -152,21 +151,21 @@ export const Hero = () => {
               rel="noopener noreferrer"
               className="p-3 bg-slate-800 hover:bg-[#ff4940]/20 rounded-full transition-all duration-300 transform hover:scale-110"
             >
-              <Github className="w-5 h-5 text-gray-300" />
+              <Github className="w-5 h-5 text-white" />
             </a>
             <a
               href="https://www.linkedin.com/in/collins-koech-2a6069180/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 bg-slate-800 hover:bg-[#003a63]/20 rounded-full transition-all duration-300 transform hover:scale-110"
+              className="p-3 bg-slate-800 hover:bg-[#ff4940]/20 rounded-full transition-all duration-300 transform hover:scale-110"
             >
-              <Linkedin className="w-5 h-5 text-gray-300" />
+              <Linkedin className="w-5 h-5 text-white" />
             </a>
             <a
               href="mailto:collinsvictor1010@gmail.com"
               className="p-3 bg-slate-800 hover:bg-[#ff4940]/20 rounded-full transition-all duration-300 transform hover:scale-110"
             >
-              <Mail className="w-5 h-5 text-gray-300" />
+              <Mail className="w-5 h-5 text-white" />
             </a>
           </motion.div>
         </motion.div>
@@ -191,7 +190,7 @@ export const Hero = () => {
               </motion.div>
               
               {/* Profile Image */}
-              <div className="absolute inset-2 rounded-full overflow-hidden bg-[#003a63]/20 backdrop-blur-sm">
+              <div className="absolute inset-2 rounded-full overflow-hidden bg-[#ff4940]/20 backdrop-blur-sm">
                 <img
                   src="/profile.png"
                   alt="Koech"
@@ -211,7 +210,7 @@ export const Hero = () => {
               <motion.div
                 animate={{ y: [10, -10, 10] }}
                 transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-4 -left-4 p-3 bg-[#003a63] rounded-full shadow-lg"
+                className="absolute -bottom-4 -left-4 p-3 bg-[#ff4940] rounded-full shadow-lg"
               >
                 <Smartphone className="w-6 h-6 text-white" />
               </motion.div>

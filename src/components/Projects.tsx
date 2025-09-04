@@ -53,7 +53,7 @@ const Projects = () => {
         rating: "4.9",
         downloads: "10K+"
       },
-      color: "bg-[#003a63]",
+      color: "bg-[#ff4940]",
       icon: TrendingUp
     },
     {
@@ -105,7 +105,7 @@ const Projects = () => {
         rating: "4.6",
         downloads: "8K+"
       },
-      color: "bg-[#003a63]",
+      color: "bg-[#ff4940]",
       icon: Code2
     },
     {
@@ -157,7 +157,7 @@ const Projects = () => {
         rating: "4.8",
         downloads: "3K+"
       },
-      color: "bg-[#003a63]",
+      color: "bg-[#ff4940]",
       icon: Smartphone
     }
   ];
@@ -190,11 +190,11 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group bg-white/10 rounded-3xl overflow-hidden border border-white/20 hover:border-[#ff4940]/50 transition-all duration-300 backdrop-blur-sm"
+              className="group bg-white/10 rounded-3xl overflow-hidden border border-white/20 hover:border-[#ff4940]/10 transition-all duration-300 backdrop-blur-sm"
             >
               {/* Project Image */}
-              <div className="relative h-48 bg-[#003a63]/50 overflow-hidden">
-                <div className="absolute inset-0 bg-[#ff4940]/10"></div>
+              <div className="relative h-48 bg-[#ff4940]/30 overflow-hidden">
+                <div className="absolute inset-0 bg-[#ff4940]/12"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className={`w-16 h-16 rounded-full ${project.color} p-4 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300`}>
                     <project.icon className="w-8 h-8 text-white" />
