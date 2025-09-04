@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Download, Mail, Github, Linkedin, MapPin, Smartphone, Code2, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Squares } from "@/components/ui/squares-background";
 
 export const Hero = () => {
   const scrollToSection = (href: string) => {
@@ -12,6 +13,17 @@ export const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
+      {/* Animated Squares Background */}
+      <div className="absolute inset-0 opacity-20">
+        <Squares 
+          direction="right"
+          speed={0.5}
+          squareSize={60}
+          borderColor="#ff494020" 
+          hoverFillColor="#ff494010"
+        />
+      </div>
+      
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -41,6 +53,81 @@ export const Hero = () => {
       </div>
 
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10">
+        {/* Profile Image & Tech Stack */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="relative flex justify-center"
+        >
+          <div className="relative">
+            {/* Main Profile Container */}
+            <div className="relative w-80 h-80 md:w-96 md:h-96">
+              {/* Rotating Border */}
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-0 rounded-full bg-[#ff4940] p-1"
+              >
+                <div className="w-full h-full rounded-full bg-slate-900"></div>
+              </motion.div>
+              
+              {/* Profile Image */}
+              <div className="absolute inset-2 rounded-full overflow-hidden bg-[#ff4940]/20 backdrop-blur-sm">
+                <img
+                  src="/profile.png"
+                  alt="Koech"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              {/* Floating Tech Icons */}
+              <motion.div
+                animate={{ y: [-10, 10, -10] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -top-4 -right-4 p-3 bg-[#ff4940] rounded-full shadow-lg"
+              >
+                <Code2 className="w-6 h-6 text-white" />
+              </motion.div>
+
+              <motion.div
+                animate={{ y: [10, -10, 10] }}
+                transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -bottom-4 -left-4 p-3 bg-[#ff4940] rounded-full shadow-lg"
+              >
+                <Smartphone className="w-6 h-6 text-white" />
+              </motion.div>
+
+              <motion.div
+                animate={{ y: [-5, 15, -5] }}
+                transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute top-1/2 -left-8 p-3 bg-[#ff4940] rounded-full shadow-lg"
+              >
+                <Zap className="w-6 h-6 text-white" />
+              </motion.div>
+            </div>
+
+            {/* Tech Stack Labels */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1 }}
+              className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2"
+            >
+              {["Flutter", "Swift", "Kotlin"].map((tech, index) => (
+                <motion.span
+                  key={tech}
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 1.2 + index * 0.1 }}
+                  className="px-4 py-2 bg-slate-800/80 rounded-full text-sm text-[#ff4940] border border-[#ff4940]/30 font-['Gilmer']"
+                >
+                  {tech}
+                </motion.span>
+              ))}
+            </motion.div>
+          </div>
+        </motion.div>
         {/* Content */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -170,81 +257,6 @@ export const Hero = () => {
           </motion.div>
         </motion.div>
 
-        {/* Profile Image & Tech Stack */}
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative flex justify-center"
-        >
-          <div className="relative">
-            {/* Main Profile Container */}
-            <div className="relative w-80 h-80 md:w-96 md:h-96">
-              {/* Rotating Border */}
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 rounded-full bg-[#ff4940] p-1"
-              >
-                <div className="w-full h-full rounded-full bg-slate-900"></div>
-              </motion.div>
-              
-              {/* Profile Image */}
-              <div className="absolute inset-2 rounded-full overflow-hidden bg-[#ff4940]/20 backdrop-blur-sm">
-                <img
-                  src="/profile.png"
-                  alt="Koech"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              {/* Floating Tech Icons */}
-              <motion.div
-                animate={{ y: [-10, 10, -10] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-4 -right-4 p-3 bg-[#ff4940] rounded-full shadow-lg"
-              >
-                <Code2 className="w-6 h-6 text-white" />
-              </motion.div>
-
-              <motion.div
-                animate={{ y: [10, -10, 10] }}
-                transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-4 -left-4 p-3 bg-[#ff4940] rounded-full shadow-lg"
-              >
-                <Smartphone className="w-6 h-6 text-white" />
-              </motion.div>
-
-              <motion.div
-                animate={{ y: [-5, 15, -5] }}
-                transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-1/2 -left-8 p-3 bg-[#ff4940] rounded-full shadow-lg"
-              >
-                <Zap className="w-6 h-6 text-white" />
-              </motion.div>
-            </div>
-
-            {/* Tech Stack Labels */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1 }}
-              className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2"
-            >
-              {["Flutter", "Swift", "Kotlin"].map((tech, index) => (
-                <motion.span
-                  key={tech}
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 1.2 + index * 0.1 }}
-                  className="px-4 py-2 bg-slate-800/80 rounded-full text-sm text-[#ff4940] border border-[#ff4940]/30 font-['Gilmer']"
-                >
-                  {tech}
-                </motion.span>
-              ))}
-            </motion.div>
-          </div>
-        </motion.div>
       </div>
 
       {/* Scroll Indicator */}

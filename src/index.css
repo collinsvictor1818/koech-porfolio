@@ -6,18 +6,51 @@
   :root {
     --background: 0 0% 100%;
     --foreground: 207 100% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 207 100% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 207 100% 15%;
+    --primary: 207 100% 15%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 214 32% 91%;
+    --secondary-foreground: 207 100% 15%;
+    --muted: 214 32% 91%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 214 32% 91%;
+    --accent-foreground: 207 100% 15%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
     --border: 214 32% 91%;
     --input: 214 32% 91%;
     --ring: 222 84% 4%;
     --radius: 0.75rem;
     --font-family: 'Gilmer', sans-serif;
   }
+  
   .dark {
     --background: 207 100% 15%;
     --foreground: 0 0% 100%;
+    --card: 216 34% 17%;
+    --card-foreground: 0 0% 100%;
+    --popover: 216 34% 17%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 207 100% 15%;
+    --secondary: 216 34% 17%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 216 34% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 216 34% 17%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
     --border: 216 34% 17%;
     --input: 216 34% 17%;
     --ring: 216 34% 17%;
+  }
+
+  * {
+    @apply border-border;
   }
 
   body {

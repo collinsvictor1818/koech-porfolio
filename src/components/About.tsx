@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Award, Users, Code, Target, GraduationCap, MapPin } from "lucide-react";
+import { Squares } from "@/components/ui/squares-background";
 
 export const About = () => {
   const achievements = [
@@ -30,8 +31,19 @@ export const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 px-4">
-      <div className="max-w-7xl mx-auto">
+    <section id="about" className="py-20 px-4 relative">
+      {/* Animated Squares Background */}
+      <div className="absolute inset-0 opacity-15">
+        <Squares 
+          direction="up"
+          speed={0.2}
+          squareSize={45}
+          borderColor="#ffffff15" 
+          hoverFillColor="#ffffff08"
+        />
+      </div>
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
