@@ -153,7 +153,7 @@ export const Hero = () => {
             transition={{ delay: 0.3 }}
             className="text-4xl md:text-6xl font-bold text-theme-primary leading-tight font-['Gilmer']"
           >
-            Hi, I'm{" "}
+            👋🏽 Hi, I'm{" "}
             <span className="text-accent">
              Collins Koech
             </span>

@@ -55,8 +55,8 @@ export function Squares({
       const startX = Math.floor(gridOffset.current.x / squareSize) * squareSize
       const startY = Math.floor(gridOffset.current.y / squareSize) * squareSize
 
-      // Increase grid line visibility
-      ctx.lineWidth = 1.5 // was 0.5
+      // Make grid lines more visible
+      ctx.lineWidth = 1.5
 
       for (let x = startX; x < canvas.width + squareSize; x += squareSize) {
         for (let y = startY; y < canvas.height + squareSize; y += squareSize) {
@@ -72,12 +72,13 @@ export function Squares({
             ctx.fillRect(squareX, squareY, squareSize, squareSize)
           }
 
-          // Use theme-aware border color
+          // Use theme-aware border color with better visibility
           ctx.strokeStyle = borderColor || currentColors.squaresBorder
           ctx.strokeRect(squareX, squareY, squareSize, squareSize)
         }
       }
 
+      // Apply a subtle gradient that doesn't hide the grid lines
       const gradient = ctx.createRadialGradient(
         canvas.width / 2,
         canvas.height / 2,
@@ -87,7 +88,7 @@ export function Squares({
         Math.sqrt(Math.pow(canvas.width, 2) + Math.pow(canvas.height, 2)) / 2,
       )
       gradient.addColorStop(0, "rgba(0, 0, 0, 0)")
-      gradient.addColorStop(1, currentColors.squaresBg)
+      gradient.addColorStop(1, "rgba(0, 0, 0, 0.1)")
 
       ctx.fillStyle = gradient
       ctx.fillRect(0, 0, canvas.width, canvas.height)

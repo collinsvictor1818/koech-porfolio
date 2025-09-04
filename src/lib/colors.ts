@@ -50,8 +50,8 @@ const defaultColors: ColorConfig = {
     glassBg: 'rgba(255, 255, 255, 0.1)',
     glassBorder: 'rgba(255, 255, 255, 0.2)',
     squaresBg: '#060606',
-    squaresBorder: '#333333',
-    squaresHover: '#222222',
+    squaresBorder: '#666666',
+    squaresHover: '#444444',
     border: '#334155',
     borderLight: '#475569'
   },
@@ -65,7 +65,7 @@ const defaultColors: ColorConfig = {
     glassBg: 'rgba(0, 0, 0, 0.05)',
     glassBorder: 'rgba(0, 0, 0, 0.1)',
     squaresBg: '#f1f5f9',
-    squaresBorder: '#e2e8f0',
+    squaresBorder: '#64748b',
     squaresHover: '#cbd5e1',
     border: '#e2e8f0',
     borderLight: '#cbd5e1'
