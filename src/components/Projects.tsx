@@ -163,7 +163,7 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 px-4">
+    <section id="projects" className="py-12 sm:py-16 lg:py-20 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -171,18 +171,18 @@ const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-12 lg:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-theme-primary mb-4 font-['Gilmer']">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-theme-primary mb-4 font-['Gilmer']">
             Featured <span className="text-accent">Projects</span>
           </h2>
-          <p className="text-xl text-theme-secondary max-w-3xl mx-auto font-['Gilmer']">
+          <p className="text-lg sm:text-xl text-theme-secondary max-w-3xl mx-auto font-['Gilmer']">
             Showcasing innovative mobile applications and solutions that demonstrate technical excellence and user-centric design
           </p>
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-16">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -193,7 +193,7 @@ const Projects = () => {
               className="group bg-glass rounded-3xl overflow-hidden border border-glass hover:border-accent/10 transition-all duration-300 backdrop-blur-sm"
             >
               {/* Project Image */}
-              <div className="relative h-48 bg-accent/30 overflow-hidden">
+              <div className="relative h-40 sm:h-48 bg-accent/30 overflow-hidden">
                 <div className="absolute inset-0 bg-accent/12"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className={`w-16 h-16 rounded-full ${project.color} p-4 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300`}>
@@ -220,11 +220,11 @@ const Projects = () => {
               </div>
 
               {/* Project Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-theme-primary mb-2 group-hover:text-accent transition-colors duration-300 font-['Gilmer']">
+              <div className="p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-bold text-theme-primary mb-2 group-hover:text-accent transition-colors duration-300 font-['Gilmer']">
                   {project.title}
                 </h3>
-                <p className="text-theme-secondary text-sm mb-4 leading-relaxed font-['Gilmer']">
+                <p className="text-xs sm:text-sm text-theme-secondary mb-4 leading-relaxed font-['Gilmer']">
                   {project.description}
                 </p>
 
@@ -233,7 +233,7 @@ const Projects = () => {
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 bg-accent/20 rounded-full text-xs text-accent border border-accent/30 font-['Gilmer']"
+                      className="px-2 sm:px-3 py-1 bg-accent/20 rounded-full text-xs text-accent border border-accent/30 font-['Gilmer']"
                     >
                       {tech}
                     </span>
@@ -242,7 +242,7 @@ const Projects = () => {
 
                 {/* Key Features */}
                 <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-theme-primary mb-2 font-['Gilmer']">Key Features:</h4>
+                  <h4 className="text-xs sm:text-sm font-semibold text-theme-primary mb-2 font-['Gilmer']">Key Features:</h4>
                   <ul className="space-y-1">
                     {project.features.slice(0, 3).map((feature, i) => (
                       <li key={i} className="text-xs text-theme-secondary flex items-center font-['Gilmer']">
@@ -254,7 +254,7 @@ const Projects = () => {
                 </div>
 
                 {/* Links */}
-                <div className="flex space-x-3">
+                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
                   {project.links.github && (
                     <Button
                       variant="outline"
@@ -288,8 +288,8 @@ const Projects = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h3 className="text-2xl font-bold text-theme-primary mb-8 font-['Gilmer']">Project Impact</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <h3 className="text-xl sm:text-2xl font-bold text-theme-primary mb-6 sm:mb-8 font-['Gilmer']">Project Impact</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {[
               { number: "6+", label: "Major Projects", color: "text-accent" },
               { number: "8K+", label: "Total Users", color: "text-accent" },
@@ -302,10 +302,10 @@ const Projects = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="p-6 bg-glass rounded-full border border-glass"
+                className="p-4 sm:p-6 bg-glass rounded-full border border-glass"
               >
-                <div className={`text-3xl font-bold ${stat.color} mb-2 font-['Gilmer']`}>{stat.number}</div>
-                <div className="text-theme-secondary text-sm font-['Gilmer']">{stat.label}</div>
+                <div className={`text-2xl sm:text-3xl font-bold ${stat.color} mb-2 font-['Gilmer']`}>{stat.number}</div>
+                <div className="text-theme-secondary text-xs sm:text-sm font-['Gilmer']">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -317,23 +317,23 @@ const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="mt-16 text-center"
+          className="mt-8 sm:mt-12 lg:mt-16 text-center"
         >
-          <div className="max-w-3xl mx-auto p-8 bg-glass rounded-3xl border border-accent/20">
-            <h3 className="text-2xl font-bold text-theme-primary mb-4 font-['Gilmer']">Interested in Working Together?</h3>
-            <p className="text-theme-secondary mb-6 font-['Gilmer']">
+          <div className="max-w-3xl mx-auto p-6 sm:p-8 bg-glass rounded-3xl border border-accent/20">
+            <h3 className="text-xl sm:text-2xl font-bold text-theme-primary mb-4 font-['Gilmer']">Interested in Working Together?</h3>
+            <p className="text-sm sm:text-base text-theme-secondary mb-6 font-['Gilmer']">
               I'm always excited to work on new projects and collaborate with innovative teams. 
               Let's discuss how we can bring your mobile app ideas to life.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
               <Button
-                className="bg-accent hover:bg-accent/80 text-white px-8 py-3 rounded-full font-medium font-['Gilmer']"
+                className="bg-accent hover:bg-accent/80 text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full font-medium font-['Gilmer'] text-sm sm:text-base"
               >
                 Start a Project
               </Button>
               <Button
                 variant="outline"
-                className="border-accent text-accent hover:bg-accent/10 px-8 py-3 rounded-full font-medium font-['Gilmer']"
+                className="border-accent text-accent hover:bg-accent/10 px-6 sm:px-8 py-2 sm:py-3 rounded-full font-medium font-['Gilmer'] text-sm sm:text-base"
               >
                 View All Projects
               </Button>

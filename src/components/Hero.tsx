@@ -12,17 +12,17 @@ export const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
+    <section id="home" className="min-h-[80vh] sm:min-h-[90vh] flex items-center justify-center px-4 py-8 sm:py-12 relative overflow-hidden">
       {/* Animated Squares Background */}
       <div className="absolute inset-0 opacity-0">
-        <Squares 
-          direction="right"
-          speed={0.5}
-          squareSize={60}
-          borderColor="#ff494020" 
-          hoverFillColor="#ff494010"
-        />
-      </div>
+          <Squares 
+            direction="diagonal"
+            speed={0.3}
+            squareSize={50}
+            borderColor="#ffffff20" 
+            hoverFillColor="#ffffff10"
+          />
+        </div>
       
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -52,7 +52,7 @@ export const Hero = () => {
         />
       </div>
 
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10">
         {/* Profile Image & Tech Stack */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
@@ -62,7 +62,7 @@ export const Hero = () => {
         >
           <div className="relative">
             {/* Main Profile Container */}
-            <div className="relative w-80 h-80 md:w-96 md:h-96">
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96">
               {/* Rotating Border */}
               <motion.div
                 animate={{ rotate: 360 }}
@@ -133,7 +133,7 @@ export const Hero = () => {
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="space-y-6"
+          className="space-y-4 sm:space-y-6"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -151,7 +151,7 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-4xl md:text-6xl font-bold text-theme-primary leading-tight font-['Gilmer']"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-theme-primary leading-tight font-['Gilmer']"
           >
             👋🏽 Hi, I'm{" "}
             <span className="text-accent">
@@ -165,17 +165,17 @@ export const Hero = () => {
             transition={{ delay: 0.4 }}
             className="space-y-2"
           >
-            <h2 className="text-2xl md:text-3xl font-semibold text-theme-secondary font-['Gilmer']">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-theme-secondary font-['Gilmer']">
               Senior Mobile Engineer
             </h2>
-            <h3 className="text-xl text-accent font-['Gilmer']">Builder & Creative</h3>
+            <h3 className="text-lg sm:text-xl text-accent font-['Gilmer']">Builder & Creative</h3>
           </motion.div>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="text-lg text-theme-secondary leading-relaxed max-w-2xl font-['Gilmer']"
+            className="text-base sm:text-lg text-theme-secondary leading-relaxed max-w-2xl font-['Gilmer']"
           >
             With 6 years of experience, I specialize in building high-performance mobile applications 
             using Flutter, Swift, and Kotlin. I lead teams to deliver innovative solutions that 
@@ -187,19 +187,19 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="grid grid-cols-3 gap-6 py-6"
+            className="grid grid-cols-3 gap-2 sm:gap-4 lg:gap-6 py-4 sm:py-6"
           >
-            <div className="text-center bg-theme-secondary/50 rounded-full py-4 px-2">
-              <div className="text-3xl font-bold text-accent font-['Gilmer']">6+</div>
-              <div className="text-sm text-theme-muted font-['Gilmer']">Years Experience</div>
+            <div className="text-center bg-theme-secondary/50 rounded-full py-2 sm:py-4 px-1 sm:px-2">
+              <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-accent font-['Gilmer']">6+</div>
+              <div className="text-xs sm:text-sm text-theme-muted font-['Gilmer']">Years</div>
             </div>
-            <div className="text-center bg-theme-secondary/50 rounded-full py-4 px-2">
-              <div className="text-3xl font-bold text-accent font-['Gilmer']">50+</div>
-              <div className="text-sm text-theme-muted font-['Gilmer']">Projects Completed</div>
+            <div className="text-center bg-theme-secondary/50 rounded-full py-2 sm:py-4 px-1 sm:px-2">
+              <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-accent font-['Gilmer']">50+</div>
+              <div className="text-xs sm:text-sm text-theme-muted font-['Gilmer']">Projects</div>
             </div>
-            <div className="text-center bg-theme-secondary/50 rounded-full py-4 px-2">
-              <div className="text-3xl font-bold text-accent font-['Gilmer']">5K+</div>
-              <div className="text-sm text-theme-muted font-['Gilmer']">Users Impacted</div>
+            <div className="text-center bg-theme-secondary/50 rounded-full py-2 sm:py-4 px-1 sm:px-2">
+              <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-accent font-['Gilmer']">5K+</div>
+              <div className="text-xs sm:text-sm text-theme-muted font-['Gilmer']">Users</div>
             </div>
           </motion.div>
 
@@ -208,17 +208,17 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
-            className="flex flex-wrap gap-4"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4"
           >
             <Button
               onClick={() => scrollToSection("#contact")}
-              className="bg-accent hover:bg-accent/80 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 font-['Gilmer']"
+              className="bg-accent hover:bg-accent/80 text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 font-['Gilmer'] text-sm sm:text-base"
             >
               <Mail className="w-4 h-4 mr-2" />
               Get In Touch
             </Button>
             <Button
-              className="bg-accent hover:bg-accent/80 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 font-['Gilmer']"
+              className="bg-accent hover:bg-accent/80 text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 font-['Gilmer'] text-sm sm:text-base"
               >
               <Download className="w-4 h-4 mr-2" />
               Download CV
@@ -230,13 +230,13 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
-            className="flex space-x-4 pt-4"
+            className="flex justify-center sm:justify-start space-x-3 sm:space-x-4 pt-4"
           >
             <a
               href="https://github.com/collinsvictor1818"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 bg-theme-secondary hover:bg-accent/20 rounded-full transition-all duration-300 transform hover:scale-110"
+              className="p-2 sm:p-3 bg-theme-secondary hover:bg-accent/20 rounded-full transition-all duration-300 transform hover:scale-110"
             >
               <Github className="w-5 h-5 text-theme-primary" />
             </a>
@@ -244,13 +244,13 @@ export const Hero = () => {
               href="https://www.linkedin.com/in/collins-koech-2a6069180/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 bg-theme-secondary hover:bg-accent/20 rounded-full transition-all duration-300 transform hover:scale-110"
+              className="p-2 sm:p-3 bg-theme-secondary hover:bg-accent/20 rounded-full transition-all duration-300 transform hover:scale-110"
             >
               <Linkedin className="w-5 h-5 text-theme-primary" />
             </a>
             <a
               href="mailto:collinsvictor1010@gmail.com"
-              className="p-3 bg-theme-secondary hover:bg-accent/20 rounded-full transition-all duration-300 transform hover:scale-110"
+              className="p-2 sm:p-3 bg-theme-secondary hover:bg-accent/20 rounded-full transition-all duration-300 transform hover:scale-110"
             >
               <Mail className="w-5 h-5 text-theme-primary" />
             </a>

@@ -1,5 +1,4 @@
 import { useRef, useEffect, useState } from "react"
-import { useTheme } from "@/contexts/ThemeContext"
 
 interface SquaresProps {
   direction?: "right" | "left" | "up" | "down" | "diagonal"
@@ -18,7 +17,6 @@ export function Squares({
   hoverFillColor,
   className,
 }: SquaresProps) {
-  const { currentColors } = useTheme()
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const requestRef = useRef<number>()
   const numSquaresX = useRef<number>()
@@ -36,8 +34,8 @@ export function Squares({
     const ctx = canvas.getContext("2d")
     if (!ctx) return
 
-    // Set canvas background using theme colors
-    canvas.style.background = currentColors.squaresBg
+    // Set canvas background to blue
+    canvas.style.background = "#003a63"
 
     const resizeCanvas = () => {
       canvas.width = canvas.offsetWidth
@@ -51,6 +49,10 @@ export function Squares({
 
     const drawGrid = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+      // Fill the background with blue (no gradients)
+      ctx.fillStyle = "#003a63"
+      ctx.fillRect(0, 0, canvas.width, canvas.height)
 
       const startX = Math.floor(gridOffset.current.x / squareSize) * squareSize
       const startY = Math.floor(gridOffset.current.y / squareSize) * squareSize
@@ -68,30 +70,16 @@ export function Squares({
             Math.floor((x - startX) / squareSize) === hoveredSquare.x &&
             Math.floor((y - startY) / squareSize) === hoveredSquare.y
           ) {
-            ctx.fillStyle = hoverFillColor || currentColors.squaresHover
+            ctx.fillStyle = hoverFillColor || "#003a63"
             ctx.fillRect(squareX, squareY, squareSize, squareSize)
           }
 
-          // Use theme-aware border color with better visibility
-          ctx.strokeStyle = borderColor || currentColors.squaresBorder
+          // Use blue for grid lines
+          ctx.strokeStyle = borderColor || "#003a63"
           ctx.strokeRect(squareX, squareY, squareSize, squareSize)
         }
       }
-
-      // Apply a subtle gradient that doesn't hide the grid lines
-      const gradient = ctx.createRadialGradient(
-        canvas.width / 2,
-        canvas.height / 2,
-        0,
-        canvas.width / 2,
-        canvas.height / 2,
-        Math.sqrt(Math.pow(canvas.width, 2) + Math.pow(canvas.height, 2)) / 2,
-      )
-      gradient.addColorStop(0, "rgba(0, 0, 0, 0)")
-      gradient.addColorStop(1, "rgba(0, 0, 0, 0.1)")
-
-      ctx.fillStyle = gradient
-      ctx.fillRect(0, 0, canvas.width, canvas.height)
+      // No gradients, just blue everywhere
     }
 
     const updateAnimation = () => {
@@ -166,7 +154,7 @@ export function Squares({
         cancelAnimationFrame(requestRef.current)
       }
     }
-  }, [direction, speed, borderColor, hoverFillColor, hoveredSquare, squareSize, currentColors])
+  }, [direction, speed, borderColor, hoverFillColor, hoveredSquare, squareSize])
 
   return (
     <canvas

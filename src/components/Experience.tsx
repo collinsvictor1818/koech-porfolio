@@ -74,7 +74,7 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 px-4">
+    <section id="experience" className="py-12 sm:py-16 lg:py-20 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -82,12 +82,12 @@ const Experience = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-12 lg:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-theme-primary mb-4 font-['Gilmer']">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-theme-primary mb-4 font-['Gilmer']">
             Professional <span className="text-accent">Experience</span>
           </h2>
-          <p className="text-xl text-theme-secondary max-w-3xl mx-auto font-['Gilmer']">
+          <p className="text-lg sm:text-xl text-theme-secondary max-w-3xl mx-auto font-['Gilmer']">
             A journey of growth, leadership, and technical excellence across global companies
           </p>
         </motion.div>
@@ -98,7 +98,7 @@ const Experience = () => {
           <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-0.5 h-full bg-accent"></div>
 
           {/* Experience Items */}
-          <div className="space-y-12">
+          <div className="space-y-8 sm:space-y-12">
             {experiences.map((exp, index) => (
               <motion.div
                 key={index}
@@ -117,11 +117,11 @@ const Experience = () => {
 
                 {/* Content Card */}
                 <div className={`w-full md:w-5/12 ml-12 md:ml-0 ${
-                  index % 2 === 0 ? 'md:mr-8' : 'md:ml-8'
+                  index % 2 === 0 ? 'md:mr-6' : 'md:ml-6'
                 }`}>
                   <motion.div
                     whileHover={{ scale: 1.02 }}
-                    className="bg-glass rounded-3xl p-6 border border-glass hover:border-accent/50 transition-all duration-300 backdrop-blur-sm"
+                    className="bg-glass rounded-3xl p-4 sm:p-6 border border-glass hover:border-accent/50 transition-all duration-300 backdrop-blur-sm"
                   >
                     {/* Header */}
                     <div className="flex items-start justify-between mb-4">
@@ -134,7 +134,7 @@ const Experience = () => {
                             {exp.type}
                           </span>
                         </div>
-                        <h3 className="text-xl font-bold text-theme-primary mb-1 font-['Gilmer']">{exp.title}</h3>
+                        <h3 className="text-lg sm:text-xl font-bold text-theme-primary mb-1 font-['Gilmer']">{exp.title}</h3>
                         <div className="flex items-center space-x-4 text-theme-secondary text-sm mb-2 font-['Gilmer']">
                           <div className="flex items-center space-x-1">
                             <Building className="w-4 h-4" />
@@ -153,13 +153,13 @@ const Experience = () => {
                     </div>
 
                     {/* Description */}
-                    <p className="text-theme-secondary mb-4 leading-relaxed font-['Gilmer']">
+                    <p className="text-sm sm:text-base text-theme-secondary mb-4 leading-relaxed font-['Gilmer']">
                       {exp.description}
                     </p>
 
                     {/* Achievements */}
                     <div className="mb-4">
-                      <h4 className="text-theme-primary font-semibold mb-2 flex items-center font-['Gilmer']">
+                      <h4 className="text-sm sm:text-base text-theme-primary font-semibold mb-2 flex items-center font-['Gilmer']">
                         <div className="bg-accent p-1 rounded-full mr-2">
                           <Award className="w-3 h-3 text-white" />
                         </div>
@@ -167,7 +167,7 @@ const Experience = () => {
                       </h4>
                       <ul className="space-y-2">
                         {exp.achievements.map((achievement, i) => (
-                          <li key={i} className="flex items-start space-x-2 text-theme-secondary text-sm font-['Gilmer']">
+                          <li key={i} className="flex items-start space-x-2 text-theme-secondary text-xs sm:text-sm font-['Gilmer']">
                             <ChevronRight className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
                             <span>{achievement}</span>
                           </li>
@@ -177,12 +177,12 @@ const Experience = () => {
 
                     {/* Technologies */}
                     <div>
-                      <h4 className="text-theme-primary font-semibold mb-2 font-['Gilmer']">Technologies & Skills</h4>
+                      <h4 className="text-sm sm:text-base text-theme-primary font-semibold mb-2 font-['Gilmer']">Technologies & Skills</h4>
                       <div className="flex flex-wrap gap-2">
                         {exp.technologies.map((tech) => (
                           <span
                             key={tech}
-                            className="px-3 py-1 bg-accent/20 rounded-full text-xs text-accent border border-accent/30 font-['Gilmer']"
+                            className="px-2 sm:px-3 py-1 bg-accent/20 rounded-full text-xs text-accent border border-accent/30 font-['Gilmer']"
                           >
                             {tech}
                           </span>
@@ -202,10 +202,10 @@ const Experience = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="mt-20"
+          className="mt-12 sm:mt-16 lg:mt-20"
         >
-          <h3 className="text-2xl font-bold text-theme-primary text-center mb-8 font-['Gilmer']">Career Highlights</h3>
-          <div className="grid md:grid-cols-3 gap-6">
+          <h3 className="text-xl sm:text-2xl font-bold text-theme-primary text-center mb-6 sm:mb-8 font-['Gilmer']">Career Highlights</h3>
+          <div className="grid md:grid-cols-3 gap-4 sm:gap-6">
             {[
               {
                 title: "Global Experience",
@@ -232,13 +232,13 @@ const Experience = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="text-center p-6 bg-glass rounded-3xl border border-glass hover:border-accent/30 transition-all duration-300"
+                className="text-center p-4 sm:p-6 bg-glass rounded-3xl border border-glass hover:border-accent/30 transition-all duration-300"
               >
                 <div className={`w-12 h-12 mx-auto mb-4 rounded-full ${highlight.color} p-3 flex items-center justify-center`}>
                   <highlight.icon className="w-6 h-6 text-white" />
                 </div>
-                <h4 className="text-lg font-semibold text-theme-primary mb-2 font-['Gilmer']">{highlight.title}</h4>
-                <p className="text-theme-secondary text-sm font-['Gilmer']">{highlight.description}</p>
+                <h4 className="text-base sm:text-lg font-semibold text-theme-primary mb-2 font-['Gilmer']">{highlight.title}</h4>
+                <p className="text-xs sm:text-sm text-theme-secondary font-['Gilmer']">{highlight.description}</p>
               </motion.div>
             ))}
           </div>
