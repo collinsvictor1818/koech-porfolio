@@ -126,7 +126,7 @@ const FloatingNav: React.FC<FloatingNavProps> = ({
                 className={`relative px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 flex items-center gap-2 ${
                   activeSection === item.href.substring(1)
                     ? "text-theme-primary"
-                    : "text-theme-secondary hover:text-theme-primary"
+                    : "text-theme-secondary hover:text-accent"
                 }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -191,7 +191,7 @@ const FloatingNav: React.FC<FloatingNavProps> = ({
                       className={`flex items-center gap-3 px-3 sm:px-4 py-2 sm:py-3 rounded-lg text-sm sm:text-base font-medium transition-all duration-300 ${
                         activeSection === item.href.substring(1)
                           ? "bg-accent/10 text-theme-primary border border-accent/20"
-                          : "text-theme-secondary hover:text-theme-primary hover:bg-accent/5"
+                          : "text-theme-secondary hover:text-accent hover:bg-accent/5"
                       }`}
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}

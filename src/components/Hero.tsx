@@ -75,7 +75,7 @@ export const Hero = () => {
               {/* Profile Image */}
               <div className="absolute inset-2 rounded-full overflow-hidden bg-accent/20 backdrop-blur-sm">
                 <img
-                  src="/profile.png"
+                  src="/profile-2.jpeg"
                   alt="Koech"
                   className="w-full h-full object-cover"
                 />
