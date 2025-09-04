@@ -14,7 +14,7 @@ export const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
       {/* Animated Squares Background */}
-      <div className="absolute inset-0 opacity-20">
+      <div className="absolute inset-0 opacity-0">
         <Squares 
           direction="right"
           speed={0.5}
@@ -36,7 +36,7 @@ export const Hero = () => {
             repeat: Infinity,
             ease: "linear",
           }}
-          className="absolute top-1/4 left-1/4 w-64 h-64 bg-[#ff4940]/10 rounded-full blur-3xl"
+          className="absolute top-1/4 left-1/4 w-64 h-64 bg-accent/10 rounded-full blur-3xl"
         />
         <motion.div
           animate={{
@@ -48,7 +48,7 @@ export const Hero = () => {
             repeat: Infinity,
             ease: "linear",
           }}
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#ff4940]/10 rounded-full blur-3xl"
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl"
         />
       </div>
 
@@ -67,13 +67,13 @@ export const Hero = () => {
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 rounded-full bg-[#ff4940] p-1"
+                className="absolute inset-0 rounded-full bg-accent p-1"
               >
-                <div className="w-full h-full rounded-full bg-slate-900"></div>
+                <div className="w-full h-full rounded-full bg-theme-primary"></div>
               </motion.div>
               
               {/* Profile Image */}
-              <div className="absolute inset-2 rounded-full overflow-hidden bg-[#ff4940]/20 backdrop-blur-sm">
+              <div className="absolute inset-2 rounded-full overflow-hidden bg-accent/20 backdrop-blur-sm">
                 <img
                   src="/profile.png"
                   alt="Koech"
@@ -85,7 +85,7 @@ export const Hero = () => {
               <motion.div
                 animate={{ y: [-10, 10, -10] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-4 -right-4 p-3 bg-[#ff4940] rounded-full shadow-lg"
+                className="absolute -top-4 -right-4 p-3 bg-accent rounded-full shadow-lg"
               >
                 <Code2 className="w-6 h-6 text-white" />
               </motion.div>
@@ -93,7 +93,7 @@ export const Hero = () => {
               <motion.div
                 animate={{ y: [10, -10, 10] }}
                 transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-4 -left-4 p-3 bg-[#ff4940] rounded-full shadow-lg"
+                className="absolute -bottom-4 -left-4 p-3 bg-accent rounded-full shadow-lg"
               >
                 <Smartphone className="w-6 h-6 text-white" />
               </motion.div>
@@ -101,7 +101,7 @@ export const Hero = () => {
               <motion.div
                 animate={{ y: [-5, 15, -5] }}
                 transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-1/2 -left-8 p-3 bg-[#ff4940] rounded-full shadow-lg"
+                className="absolute top-1/2 -left-8 p-3 bg-accent rounded-full shadow-lg"
               >
                 <Zap className="w-6 h-6 text-white" />
               </motion.div>
@@ -120,7 +120,7 @@ export const Hero = () => {
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ delay: 1.2 + index * 0.1 }}
-                  className="px-4 py-2 bg-slate-800/80 rounded-full text-sm text-[#ff4940] border border-[#ff4940]/30 font-['Gilmer']"
+                  className="px-4 py-2 bg-theme-secondary/80 rounded-full text-sm text-accent border border-accent/30 font-['Gilmer']"
                 >
                   {tech}
                 </motion.span>
@@ -141,20 +141,20 @@ export const Hero = () => {
             transition={{ delay: 0.2 }}
             className="flex items-center space-x-2"
           >
-            <div className="bg-[#ff4940] p-2 rounded-full">
+            <div className="bg-accent p-2 rounded-full">
               <MapPin size={16} className="text-white" />
             </div>
-            <span className="font-['Gilmer'] text-gray-300">Nairobi, Kenya</span>
+            <span className="font-['Gilmer'] text-theme-secondary">Nairobi, Kenya</span>
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-4xl md:text-6xl font-bold text-white leading-tight font-['Gilmer']"
+            className="text-4xl md:text-6xl font-bold text-theme-primary leading-tight font-['Gilmer']"
           >
             Hi, I'm{" "}
-            <span className="text-[#ff4940]">
+            <span className="text-accent">
              Collins Koech
             </span>
           </motion.h1>
@@ -165,17 +165,17 @@ export const Hero = () => {
             transition={{ delay: 0.4 }}
             className="space-y-2"
           >
-            <h2 className="text-2xl md:text-3xl font-semibold text-gray-200 font-['Gilmer']">
+            <h2 className="text-2xl md:text-3xl font-semibold text-theme-secondary font-['Gilmer']">
               Senior Mobile Engineer
             </h2>
-            <h3 className="text-xl text-[#ff4940] font-['Gilmer']">Builder & Creative</h3>
+            <h3 className="text-xl text-accent font-['Gilmer']">Builder & Creative</h3>
           </motion.div>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="text-lg text-gray-300 leading-relaxed max-w-2xl font-['Gilmer']"
+            className="text-lg text-theme-secondary leading-relaxed max-w-2xl font-['Gilmer']"
           >
             With 6 years of experience, I specialize in building high-performance mobile applications 
             using Flutter, Swift, and Kotlin. I lead teams to deliver innovative solutions that 
@@ -189,17 +189,17 @@ export const Hero = () => {
             transition={{ delay: 0.6 }}
             className="grid grid-cols-3 gap-6 py-6"
           >
-            <div className="text-center bg-slate-800/50 rounded-full py-4 px-2">
-              <div className="text-3xl font-bold text-[#ff4940] font-['Gilmer']">6+</div>
-              <div className="text-sm text-gray-400 font-['Gilmer']">Years Experience</div>
+            <div className="text-center bg-theme-secondary/50 rounded-full py-4 px-2">
+              <div className="text-3xl font-bold text-accent font-['Gilmer']">6+</div>
+              <div className="text-sm text-theme-muted font-['Gilmer']">Years Experience</div>
             </div>
-            <div className="text-center bg-slate-800/50 rounded-full py-4 px-2">
-              <div className="text-3xl font-bold text-[#ff4940] font-['Gilmer']">50+</div>
-              <div className="text-sm text-gray-400 font-['Gilmer']">Projects Completed</div>
+            <div className="text-center bg-theme-secondary/50 rounded-full py-4 px-2">
+              <div className="text-3xl font-bold text-accent font-['Gilmer']">50+</div>
+              <div className="text-sm text-theme-muted font-['Gilmer']">Projects Completed</div>
             </div>
-            <div className="text-center bg-slate-800/50 rounded-full py-4 px-2">
-              <div className="text-3xl font-bold text-white font-['Gilmer']">5K+</div>
-              <div className="text-sm text-gray-400 font-['Gilmer']">Users Impacted</div>
+            <div className="text-center bg-theme-secondary/50 rounded-full py-4 px-2">
+              <div className="text-3xl font-bold text-accent font-['Gilmer']">5K+</div>
+              <div className="text-sm text-theme-muted font-['Gilmer']">Users Impacted</div>
             </div>
           </motion.div>
 
@@ -212,13 +212,13 @@ export const Hero = () => {
           >
             <Button
               onClick={() => scrollToSection("#contact")}
-              className="bg-[#ff4940] hover:bg-[#ff4940]/80 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 font-['Gilmer']"
+              className="bg-accent hover:bg-accent/80 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 font-['Gilmer']"
             >
               <Mail className="w-4 h-4 mr-2" />
               Get In Touch
             </Button>
             <Button
-              className="bg-[#ff4940] hover:bg-[#ff4940]/80 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 font-['Gilmer']"
+              className="bg-accent hover:bg-accent/80 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 font-['Gilmer']"
               >
               <Download className="w-4 h-4 mr-2" />
               Download CV
@@ -236,23 +236,23 @@ export const Hero = () => {
               href="https://github.com/collinsvictor1818"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 bg-slate-800 hover:bg-[#ff4940]/20 rounded-full transition-all duration-300 transform hover:scale-110"
+              className="p-3 bg-theme-secondary hover:bg-accent/20 rounded-full transition-all duration-300 transform hover:scale-110"
             >
-              <Github className="w-5 h-5 text-white" />
+              <Github className="w-5 h-5 text-theme-primary" />
             </a>
             <a
               href="https://www.linkedin.com/in/collins-koech-2a6069180/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 bg-slate-800 hover:bg-[#ff4940]/20 rounded-full transition-all duration-300 transform hover:scale-110"
+              className="p-3 bg-theme-secondary hover:bg-accent/20 rounded-full transition-all duration-300 transform hover:scale-110"
             >
-              <Linkedin className="w-5 h-5 text-white" />
+              <Linkedin className="w-5 h-5 text-theme-primary" />
             </a>
             <a
               href="mailto:collinsvictor1010@gmail.com"
-              className="p-3 bg-slate-800 hover:bg-[#ff4940]/20 rounded-full transition-all duration-300 transform hover:scale-110"
+              className="p-3 bg-theme-secondary hover:bg-accent/20 rounded-full transition-all duration-300 transform hover:scale-110"
             >
-              <Mail className="w-5 h-5 text-white" />
+              <Mail className="w-5 h-5 text-theme-primary" />
             </a>
           </motion.div>
         </motion.div>

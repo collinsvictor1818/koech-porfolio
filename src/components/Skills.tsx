@@ -6,7 +6,7 @@ export const Skills = () => {
     {
       title: "Native Development",
       icon: Smartphone,
-      color: "bg-[#ff4940]",
+      color: "bg-accent",
       skills: [
         { name: "Swift", level: 85, description: "iOS native development" },
         { name: "Objective-C", level: 75, description: "Legacy iOS support" },
@@ -18,7 +18,7 @@ export const Skills = () => {
     {
       title: "Cross-Platform",
       icon: Code2,
-      color: "bg-[#ff4940]",
+      color: "bg-accent",
       skills: [
         { name: "Flutter", level: 95, description: "Primary framework" },
         { name: "Dart", level: 92, description: "Flutter's language" },
@@ -28,7 +28,7 @@ export const Skills = () => {
     {
       title: "Architecture & Design",
       icon: Server,
-      color: "bg-[#ff4940]",
+      color: "bg-accent",
       skills: [
         { name: "MVVM", level: 90, description: "Model-View-ViewModel pattern" },
         { name: "Clean Architecture", level: 85, description: "Scalable app structure" },
@@ -39,7 +39,7 @@ export const Skills = () => {
     {
       title: "Backend & Databases",
       icon: Database,
-      color: "bg-[#ff4940]",
+      color: "bg-accent",
       skills: [
         { name: "Python", level: 75, description: "Backend development" },
         { name: "RESTful APIs", level: 85, description: "API integration" },
@@ -52,7 +52,7 @@ export const Skills = () => {
     {
       title: "DevOps & Tools",
       icon: Wrench,
-      color: "bg-[#ff4940]",
+      color: "bg-accent",
       skills: [
         { name: "Git", level: 90, description: "Version control" },
         { name: "CI/CD", level: 80, description: "Continuous integration" },
@@ -64,7 +64,7 @@ export const Skills = () => {
     {
       title: "Core Competencies",
       icon: Users,
-      color: "bg-[#ff4940]",
+      color: "bg-accent",
       skills: [
         { name: "Team Leadership", level: 92, description: "Leading engineering teams" },
         { name: "UX/UI Principles", level: 80, description: "User experience design" },
@@ -86,10 +86,10 @@ export const Skills = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 font-['Gilmer']">
-            Technical <span className="text-[#ff4940]">Skills</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-theme-primary mb-4 font-['Gilmer']">
+            Technical <span className="text-accent">Skills</span>
           </h2>
-          <p className="text-xl text-white/80 max-w-3xl mx-auto font-['Gilmer']">
+          <p className="text-xl text-theme-secondary max-w-3xl mx-auto font-['Gilmer']">
             A comprehensive toolkit built through 6 years of hands-on mobile development experience
           </p>
         </motion.div>
@@ -103,14 +103,14 @@ export const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white/10 rounded-3xl p-6 border border-white/20 hover:border-[#ff4940]/50 transition-all duration-300"
+              className="bg-glass rounded-3xl p-6 border border-glass hover:border-accent/50 transition-all duration-300"
             >
               {/* Category Header */}
               <div className="flex items-center space-x-3 mb-6">
                 <div className={`w-12 h-12 rounded-full ${category.color} p-3 flex items-center justify-center`}>
                   <category.icon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-white font-['Gilmer']">{category.title}</h3>
+                <h3 className="text-xl font-semibold text-theme-primary font-['Gilmer']">{category.title}</h3>
               </div>
 
               {/* Skills List */}
@@ -126,14 +126,14 @@ export const Skills = () => {
                   >
                     <div className="flex justify-between items-center">
                       <div>
-                        <span className="text-white font-medium font-['Gilmer']">{skill.name}</span>
-                        <p className="text-xs text-white/60 font-['Gilmer']">{skill.description}</p>
+                        <span className="text-theme-primary font-medium font-['Gilmer']">{skill.name}</span>
+                        <p className="text-xs text-theme-muted font-['Gilmer']">{skill.description}</p>
                       </div>
-                      <span className="text-sm text-[#ff4940] font-medium font-['Gilmer']">{skill.level}%</span>
+                      <span className="text-sm text-accent font-medium font-['Gilmer']">{skill.level}%</span>
                     </div>
                     
                     {/* Progress Bar */}
-                    <div className="w-full bg-white/20 rounded-full h-2">
+                    <div className="w-full bg-theme-secondary/20 rounded-full h-2">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
@@ -157,7 +157,7 @@ export const Skills = () => {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <h3 className="text-2xl font-bold text-white mb-6 font-['Gilmer']">Specializations</h3>
+          <h3 className="text-2xl font-bold text-theme-primary mb-6 font-['Gilmer']">Specializations</h3>
           <div className="flex flex-wrap justify-center gap-4">
             {[
               "Mobile App Architecture",
@@ -177,7 +177,7 @@ export const Skills = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="px-6 py-3 bg-[#ff4940]/20 rounded-full text-sm text-[#ff4940] border border-[#ff4940]/30 hover:border-[#ff4940]/50 transition-all duration-300 font-['Gilmer']"
+                className="px-6 py-3 bg-accent/20 rounded-full text-sm text-accent border border-accent/30 hover:border-accent/50 transition-all duration-300 font-['Gilmer']"
               >
                 {specialization}
               </motion.span>
@@ -195,10 +195,10 @@ export const Skills = () => {
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { number: "6+", label: "Years Experience", color: "text-[#ff4940]" },
-              { number: "50+", label: "Projects Delivered", color: "text-[#ff4940]" },
-              { number: "10+", label: "Technologies Mastered", color: "text-[#ff4940]" },
-              { number: "5K+", label: "Users Impacted", color: "text-[#ff4940]" }
+              { number: "6+", label: "Years Experience", color: "text-accent" },
+              { number: "50+", label: "Projects Delivered", color: "text-accent" },
+              { number: "10+", label: "Technologies Mastered", color: "text-accent" },
+              { number: "5K+", label: "Users Impacted", color: "text-accent" }
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -206,10 +206,10 @@ export const Skills = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="text-center p-6 bg-white/10 rounded-full border border-white/20"
+                className="text-center p-6 bg-glass rounded-full border border-glass"
               >
                 <div className={`text-3xl font-bold ${stat.color} mb-2 font-['Gilmer']`}>{stat.number}</div>
-                <div className="text-white/80 text-sm font-['Gilmer']">{stat.label}</div>
+                <div className="text-theme-secondary text-sm font-['Gilmer']">{stat.label}</div>
               </motion.div>
             ))}
           </div>

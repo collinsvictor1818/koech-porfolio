@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from "react"
+import { useTheme } from "@/contexts/ThemeContext"
 
 interface SquaresProps {
   direction?: "right" | "left" | "up" | "down" | "diagonal"
@@ -12,11 +13,16 @@ interface SquaresProps {
 export function Squares({
   direction = "right",
   speed = 1,
-  borderColor = "#333",
+  borderColor,
   squareSize = 40,
-  hoverFillColor = "#222",
+  hoverFillColor,
   className,
 }: SquaresProps) {
+  const { currentColors } = useTheme()
+  
+  // Use theme colors if not provided
+  const effectiveBorderColor = borderColor || currentColors.squaresBorder
+  const effectiveHoverColor = hoverFillColor || currentColors.squaresHover
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const requestRef = useRef<number>()
   const numSquaresX = useRef<number>()
@@ -35,7 +41,7 @@ export function Squares({
     if (!ctx) return
 
     // Set canvas background
-    canvas.style.background = "#060606"
+    canvas.style.background = currentColors.squaresBg
 
     const resizeCanvas = () => {
       canvas.width = canvas.offsetWidth
@@ -65,11 +71,11 @@ export function Squares({
             Math.floor((x - startX) / squareSize) === hoveredSquare.x &&
             Math.floor((y - startY) / squareSize) === hoveredSquare.y
           ) {
-            ctx.fillStyle = hoverFillColor
+            ctx.fillStyle = effectiveHoverColor
             ctx.fillRect(squareX, squareY, squareSize, squareSize)
           }
 
-          ctx.strokeStyle = borderColor
+          ctx.strokeStyle = effectiveBorderColor
           ctx.strokeRect(squareX, squareY, squareSize, squareSize)
         }
       }
@@ -83,7 +89,7 @@ export function Squares({
         Math.sqrt(Math.pow(canvas.width, 2) + Math.pow(canvas.height, 2)) / 2,
       )
       gradient.addColorStop(0, "rgba(6, 6, 6, 0)")
-      gradient.addColorStop(1, "#060606")
+      gradient.addColorStop(1, currentColors.squaresBg)
 
       ctx.fillStyle = gradient
       ctx.fillRect(0, 0, canvas.width, canvas.height)
@@ -161,7 +167,7 @@ export function Squares({
         cancelAnimationFrame(requestRef.current)
       }
     }
-  }, [direction, speed, borderColor, hoverFillColor, hoveredSquare, squareSize])
+  }, [direction, speed, effectiveBorderColor, effectiveHoverColor, hoveredSquare, squareSize, currentColors])
 
   return (
     <canvas

@@ -17,7 +17,7 @@ const Experience = () => {
         "Foster a team environment focused on continuous improvement and engineering excellence"
       ],
       technologies: ["Flutter", "Dart", "Clean Architecture", "Team Leadership", "Code Review"],
-      color: "bg-[#ff4940]",
+      color: "bg-accent",
       icon: Building
     },
     {
@@ -34,7 +34,7 @@ const Experience = () => {
         "Applied excellent object-oriented design and analysis skills for scalable architecture"
       ],
       technologies: ["Flutter", "AI/ML", "Data Pipelines", "OOD", "Cross-Platform"],
-      color: "bg-[#ff4940]",
+      color: "bg-accent",
       icon: Zap
     },
     {
@@ -51,7 +51,7 @@ const Experience = () => {
         "Built robust, multi-threaded features for real-time data synchronization"
       ],
       technologies: ["Flutter", "RESTful APIs", "Multi-threading", "Full-stack", "Project Management"],
-      color: "bg-[#ff4940]",
+      color: "bg-accent",
       icon: Users
     },
     {
@@ -68,7 +68,7 @@ const Experience = () => {
         "Gained international experience working with German engineering standards"
       ],
       technologies: ["Software Design Patterns", "External Integrations", "Proof-of-Concept", "Quality Code"],
-      color: "bg-[#ff4940]",
+      color: "bg-accent",
       icon: Award
     }
   ];
@@ -84,10 +84,10 @@ const Experience = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 font-['Gilmer']">
-            Professional <span className="text-[#ff4940]">Experience</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-theme-primary mb-4 font-['Gilmer']">
+            Professional <span className="text-accent">Experience</span>
           </h2>
-          <p className="text-xl text-white/80 max-w-3xl mx-auto font-['Gilmer']">
+          <p className="text-xl text-theme-secondary max-w-3xl mx-auto font-['Gilmer']">
             A journey of growth, leadership, and technical excellence across global companies
           </p>
         </motion.div>
@@ -95,7 +95,7 @@ const Experience = () => {
         {/* Timeline */}
         <div className="relative">
           {/* Timeline Line */}
-          <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-0.5 h-full bg-[#ff4940]"></div>
+          <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-0.5 h-full bg-accent"></div>
 
           {/* Experience Items */}
           <div className="space-y-12">
@@ -111,8 +111,8 @@ const Experience = () => {
                 }`}
               >
                 {/* Timeline Node */}
-                <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 rounded-full bg-[#ff4940] border-4 border-[#003a63] z-10">
-                  <div className="absolute inset-0 rounded-full bg-[#ff4940] animate-ping opacity-20"></div>
+                <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 rounded-full bg-accent border-4 border-theme-secondary z-10">
+                  <div className="absolute inset-0 rounded-full bg-accent animate-ping opacity-20"></div>
                 </div>
 
                 {/* Content Card */}
@@ -121,7 +121,7 @@ const Experience = () => {
                 }`}>
                   <motion.div
                     whileHover={{ scale: 1.02 }}
-                    className="bg-white/10 rounded-3xl p-6 border border-white/20 hover:border-[#ff4940]/50 transition-all duration-300 backdrop-blur-sm"
+                    className="bg-glass rounded-3xl p-6 border border-glass hover:border-accent/50 transition-all duration-300 backdrop-blur-sm"
                   >
                     {/* Header */}
                     <div className="flex items-start justify-between mb-4">
@@ -130,12 +130,12 @@ const Experience = () => {
                           <div className={`w-8 h-8 rounded-full ${exp.color} p-2 flex items-center justify-center`}>
                             <exp.icon className="w-4 h-4 text-white" />
                           </div>
-                          <span className={`px-3 py-1 rounded-full text-xs font-medium bg-[#ff4940]/20 text-[#ff4940] border border-[#ff4940]/30 font-['Gilmer']`}>
+                          <span className={`px-3 py-1 rounded-full text-xs font-medium bg-accent/20 text-accent border border-accent/30 font-['Gilmer']`}>
                             {exp.type}
                           </span>
                         </div>
-                        <h3 className="text-xl font-bold text-white mb-1 font-['Gilmer']">{exp.title}</h3>
-                        <div className="flex items-center space-x-4 text-white/80 text-sm mb-2 font-['Gilmer']">
+                        <h3 className="text-xl font-bold text-theme-primary mb-1 font-['Gilmer']">{exp.title}</h3>
+                        <div className="flex items-center space-x-4 text-theme-secondary text-sm mb-2 font-['Gilmer']">
                           <div className="flex items-center space-x-1">
                             <Building className="w-4 h-4" />
                             <span>{exp.company}</span>
@@ -145,7 +145,7 @@ const Experience = () => {
                             <span>{exp.location}</span>
                           </div>
                         </div>
-                        <div className="flex items-center space-x-1 text-[#ff4940] text-sm font-['Gilmer']">
+                        <div className="flex items-center space-x-1 text-accent text-sm font-['Gilmer']">
                           <Calendar className="w-4 h-4" />
                           <span>{exp.period}</span>
                         </div>
@@ -153,22 +153,22 @@ const Experience = () => {
                     </div>
 
                     {/* Description */}
-                    <p className="text-white/80 mb-4 leading-relaxed font-['Gilmer']">
+                    <p className="text-theme-secondary mb-4 leading-relaxed font-['Gilmer']">
                       {exp.description}
                     </p>
 
                     {/* Achievements */}
                     <div className="mb-4">
-                      <h4 className="text-white font-semibold mb-2 flex items-center font-['Gilmer']">
-                        <div className="bg-[#ff4940] p-1 rounded-full mr-2">
+                      <h4 className="text-theme-primary font-semibold mb-2 flex items-center font-['Gilmer']">
+                        <div className="bg-accent p-1 rounded-full mr-2">
                           <Award className="w-3 h-3 text-white" />
                         </div>
                         Key Achievements
                       </h4>
                       <ul className="space-y-2">
                         {exp.achievements.map((achievement, i) => (
-                          <li key={i} className="flex items-start space-x-2 text-white/80 text-sm font-['Gilmer']">
-                            <ChevronRight className="w-4 h-4 text-[#ff4940] mt-0.5 flex-shrink-0" />
+                          <li key={i} className="flex items-start space-x-2 text-theme-secondary text-sm font-['Gilmer']">
+                            <ChevronRight className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
                             <span>{achievement}</span>
                           </li>
                         ))}
@@ -177,12 +177,12 @@ const Experience = () => {
 
                     {/* Technologies */}
                     <div>
-                      <h4 className="text-white font-semibold mb-2 font-['Gilmer']">Technologies & Skills</h4>
+                      <h4 className="text-theme-primary font-semibold mb-2 font-['Gilmer']">Technologies & Skills</h4>
                       <div className="flex flex-wrap gap-2">
                         {exp.technologies.map((tech) => (
                           <span
                             key={tech}
-                            className="px-3 py-1 bg-[#ff4940]/20 rounded-full text-xs text-[#ff4940] border border-[#ff4940]/30 font-['Gilmer']"
+                            className="px-3 py-1 bg-accent/20 rounded-full text-xs text-accent border border-accent/30 font-['Gilmer']"
                           >
                             {tech}
                           </span>
@@ -204,26 +204,26 @@ const Experience = () => {
           viewport={{ once: true }}
           className="mt-20"
         >
-          <h3 className="text-2xl font-bold text-white text-center mb-8 font-['Gilmer']">Career Highlights</h3>
+          <h3 className="text-2xl font-bold text-theme-primary text-center mb-8 font-['Gilmer']">Career Highlights</h3>
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
                 title: "Global Experience",
                 description: "Worked with companies across Kenya, Germany, and the UK",
                 icon: MapPin,
-                color: "bg-[#ff4940]"
+                color: "bg-accent"
               },
               {
                 title: "Leadership Growth",
                 description: "Evolved from individual contributor to senior engineering leader",
                 icon: Users,
-                color: "bg-[#ff4940]"
+                color: "bg-accent"
               },
               {
                 title: "Technical Excellence",
                 description: "Consistently delivered high-quality solutions across different domains",
                 icon: Award,
-                color: "bg-[#ff4940]"
+                color: "bg-accent"
               }
             ].map((highlight, index) => (
               <motion.div
@@ -232,13 +232,13 @@ const Experience = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="text-center p-6 bg-white/10 rounded-3xl border border-white/20 hover:border-[#ff4940]/30 transition-all duration-300"
+                className="text-center p-6 bg-glass rounded-3xl border border-glass hover:border-accent/30 transition-all duration-300"
               >
                 <div className={`w-12 h-12 mx-auto mb-4 rounded-full ${highlight.color} p-3 flex items-center justify-center`}>
                   <highlight.icon className="w-6 h-6 text-white" />
                 </div>
-                <h4 className="text-lg font-semibold text-white mb-2 font-['Gilmer']">{highlight.title}</h4>
-                <p className="text-white/80 text-sm font-['Gilmer']">{highlight.description}</p>
+                <h4 className="text-lg font-semibold text-theme-primary mb-2 font-['Gilmer']">{highlight.title}</h4>
+                <p className="text-theme-secondary text-sm font-['Gilmer']">{highlight.description}</p>
               </motion.div>
             ))}
           </div>

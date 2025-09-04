@@ -4,6 +4,7 @@
 
 @layer base {
   :root {
+    /* Default shadcn/ui variables */
     --background: 0 0% 100%;
     --foreground: 207 100% 15%;
     --card: 0 0% 100%;
@@ -25,9 +26,28 @@
     --ring: 222 84% 4%;
     --radius: 0.75rem;
     --font-family: 'Gilmer', sans-serif;
+    
+    /* Portfolio theme variables - will be overridden by theme system */
+    --color-primary-bg: #010936;
+    --color-accent: #ff4940;
+    
+    /* Dark theme defaults */
+    --color-bg-primary: #010936;
+    --color-bg-secondary: #003a63;
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #e2e8f0;
+    --color-text-muted: #94a3b8;
+    --color-glass-bg: rgba(255, 255, 255, 0.1);
+    --color-glass-border: rgba(255, 255, 255, 0.2);
+    --color-squares-bg: #060606;
+    --color-squares-border: #333333;
+    --color-squares-hover: #222222;
+    --color-border: #334155;
+    --color-border-light: #475569;
   }
   
   .dark {
+    /* shadcn/ui dark theme */
     --background: 207 100% 15%;
     --foreground: 0 0% 100%;
     --card: 216 34% 17%;
@@ -48,6 +68,22 @@
     --input: 216 34% 17%;
     --ring: 216 34% 17%;
   }
+  
+  .light {
+    /* Light theme overrides */
+    --color-bg-primary: #ffffff;
+    --color-bg-secondary: #f8fafc;
+    --color-text-primary: #0f172a;
+    --color-text-secondary: #1e293b;
+    --color-text-muted: #334155;
+    --color-glass-bg: rgba(0, 0, 0, 0.05);
+    --color-glass-border: rgba(0, 0, 0, 0.1);
+    --color-squares-bg: #f1f5f9;
+    --color-squares-border: #e2e8f0;
+    --color-squares-hover: #cbd5e1;
+    --color-border: #e2e8f0;
+    --color-border-light: #cbd5e1;
+  }
 
   * {
     @apply border-border;
@@ -66,5 +102,58 @@
   
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Portfolio theme utilities */
+  .bg-theme-primary {
+    background-color: var(--color-bg-primary);
+  }
+  
+  .bg-theme-secondary {
+    background-color: var(--color-bg-secondary);
+  }
+  
+  .text-theme-primary {
+    color: var(--color-text-primary);
+  }
+  
+  .text-theme-secondary {
+    color: var(--color-text-secondary);
+  }
+  
+  .text-theme-muted {
+    color: var(--color-text-muted);
+  }
+  
+  .text-accent {
+    color: var(--color-accent);
+  }
+  
+  .bg-accent {
+    background-color: var(--color-accent);
+  }
+  
+  .border-accent {
+    border-color: var(--color-accent);
+  }
+  
+  .bg-glass {
+    background-color: var(--color-glass-bg);
+  }
+  
+  .border-glass {
+    border-color: var(--color-glass-border);
+  }
+  
+  .hover-accent:hover {
+    background-color: var(--color-accent);
+  }
+  
+  .hover-accent-text:hover {
+    color: var(--color-accent);
+  }
+  
+  .hover-accent-border:hover {
+    border-color: var(--color-accent);
   }
 }

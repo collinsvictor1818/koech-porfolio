@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Home, User, Briefcase, Mail, Code } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import ThemeToggle from '@/components/ThemeToggle'
 
 interface NavigationItem {
   label: string
@@ -70,29 +71,27 @@ const FloatingNav: React.FC<FloatingNavProps> = ({
     setIsMobileMenuOpen(false)
   }
 
+  // Center the nav bar using a flex container
   return (
-    <>
+    <div className="fixed top-4 left-0 w-full flex justify-center z-50 pointer-events-none">
       <motion.nav
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 ${className}`}
+        className={`pointer-events-auto ${className}`}
       >
         <motion.div
           animate={{
             backdropFilter: isScrolled ? "blur(20px)" : "blur(10px)",
-            backgroundColor: isScrolled 
-              ? "rgba(0, 0, 0, 0.8)" 
-              : "rgba(0, 0, 0, 0.6)"
           }}
           transition={{ duration: 0.3 }}
-          className="flex items-center justify-between px-6 py-3 rounded-full border border-white/10 shadow-2xl backdrop-blur-md bg-black/60 min-w-[320px] max-w-4xl"
+          className="flex items-center justify-center px-6 py-3 rounded-full border border-glass shadow-2xl backdrop-blur-md bg-glass min-w-fit"
         >
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center"
+            className="flex items-center mr-8"
           >
             <a
               href="#home"
@@ -100,7 +99,7 @@ const FloatingNav: React.FC<FloatingNavProps> = ({
                 e.preventDefault()
                 handleNavClick("#home")
               }}
-              className="text-white font-bold text-lg tracking-tight hover:text-primary transition-colors duration-200"
+              className="text-theme-primary font-bold text-lg tracking-tight hover:text-accent transition-colors duration-200"
             >
               {logo}
             </a>
@@ -118,8 +117,8 @@ const FloatingNav: React.FC<FloatingNavProps> = ({
                 }}
                 className={`relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-2 ${
                   activeSection === item.href.substring(1)
-                    ? "text-white"
-                    : "text-gray-300 hover:text-white"
+                    ? "text-theme-primary"
+                    : "text-theme-secondary hover:text-theme-primary"
                 }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -130,7 +129,7 @@ const FloatingNav: React.FC<FloatingNavProps> = ({
                 {activeSection === item.href.substring(1) && (
                   <motion.div
                     layoutId="activeTab"
-                    className="absolute inset-0 bg-white/10 rounded-full border border-white/20"
+                    className="absolute inset-0 bg-accent/10 rounded-full border border-accent/20"
                     transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                   />
                 )}
@@ -142,21 +141,24 @@ const FloatingNav: React.FC<FloatingNavProps> = ({
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+          {/* Theme Toggle & Mobile Menu */}
+          <div className="flex items-center space-x-2 ml-8">
+            <ThemeToggle className="hidden md:block" />
+            
+            <div className="md:hidden">
+              <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="text-white hover:bg-white/10 p-2"
+                  className="text-theme-primary hover:bg-accent/10 p-2"
                 >
                   <Menu size={20} />
                 </Button>
               </SheetTrigger>
               <SheetContent 
                 side="right" 
-                className="w-[300px] bg-black/95 backdrop-blur-xl border-white/10 text-white"
+                className="w-[300px] bg-theme-primary/95 backdrop-blur-xl border-glass text-theme-primary"
               >
                 <div className="flex flex-col space-y-4 mt-8">
                   <div className="text-xl font-bold mb-6 text-center">
@@ -172,8 +174,8 @@ const FloatingNav: React.FC<FloatingNavProps> = ({
                       }}
                       className={`flex items-center gap-3 px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 ${
                         activeSection === item.href.substring(1)
-                          ? "bg-white/10 text-white border border-white/20"
-                          : "text-gray-300 hover:text-white hover:bg-white/5"
+                          ? "bg-accent/10 text-theme-primary border border-accent/20"
+                          : "text-theme-secondary hover:text-theme-primary hover:bg-accent/5"
                       }`}
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
@@ -186,10 +188,11 @@ const FloatingNav: React.FC<FloatingNavProps> = ({
                 </div>
               </SheetContent>
             </Sheet>
+            </div>
           </div>
         </motion.div>
       </motion.nav>
-    </>
+    </div>
   )
 }
 

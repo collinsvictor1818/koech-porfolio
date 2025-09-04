@@ -1,28 +1,37 @@
-import { Moon, Sun } from "lucide-react";
-import { Button } from "./ui/button";
-import { useEffect, useState } from "react";
+import { motion } from 'framer-motion'
+import { Sun, Moon } from 'lucide-react'
+import { useTheme } from '@/contexts/ThemeContext'
 
-export const ThemeToggle = () => {
-  const [theme, setTheme] = useState<"light" | "dark">("dark");
+interface ThemeToggleProps {
+  className?: string
+}
 
-  useEffect(() => {
-    const root = window.document.documentElement;
-    root.classList.remove("light", "dark");
-    root.classList.add(theme);
-  }, [theme]);
+export const ThemeToggle: React.FC<ThemeToggleProps> = ({ className = "" }) => {
+  const { theme, toggleTheme } = useTheme()
 
   return (
-    <Button
-      variant="ghost"
-      size="icon"
-      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-      className="rounded-full"
+    <motion.button
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      onClick={toggleTheme}
+      className={`p-3 bg-glass rounded-full border border-glass backdrop-blur-sm hover:border-accent transition-all duration-300 ${className}`}
+      aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
     >
-      {theme === "light" ? (
-        <Moon className="h-5 w-5 text-white" />
-      ) : (
-        <Sun className="h-5 w-5 text-white" />
-      )}
-    </Button>
-  );
-};
+      <motion.div
+        key={theme}
+        initial={{ rotate: -180, opacity: 0 }}
+        animate={{ rotate: 0, opacity: 1 }}
+        exit={{ rotate: 180, opacity: 0 }}
+        transition={{ duration: 0.3 }}
+      >
+        {theme === 'dark' ? (
+          <Sun className="w-5 h-5 text-accent" />
+        ) : (
+          <Moon className="w-5 h-5 text-accent" />
+        )}
+      </motion.div>
+    </motion.button>
+  )
+}
+
+export default ThemeToggle

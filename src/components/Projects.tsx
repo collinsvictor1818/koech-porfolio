@@ -27,7 +27,7 @@ const Projects = () => {
         rating: "4.8",
         downloads: "5K+"
       },
-      color: "bg-[#ff4940]",
+      color: "bg-accent",
       icon: Zap
     },
     {
@@ -53,7 +53,7 @@ const Projects = () => {
         rating: "4.9",
         downloads: "10K+"
       },
-      color: "bg-[#ff4940]",
+      color: "bg-accent",
       icon: TrendingUp
     },
     {
@@ -79,7 +79,7 @@ const Projects = () => {
         rating: "4.7",
         downloads: "2K+"
       },
-      color: "bg-[#ff4940]",
+      color: "bg-accent",
       icon: Users
     },
     {
@@ -105,7 +105,7 @@ const Projects = () => {
         rating: "4.6",
         downloads: "8K+"
       },
-      color: "bg-[#ff4940]",
+      color: "bg-accent",
       icon: Code2
     },
     {
@@ -131,7 +131,7 @@ const Projects = () => {
         rating: "4.5",
         downloads: "6K+"
       },
-      color: "bg-[#ff4940]",
+      color: "bg-accent",
       icon: Award
     },
     {
@@ -157,7 +157,7 @@ const Projects = () => {
         rating: "4.8",
         downloads: "3K+"
       },
-      color: "bg-[#ff4940]",
+      color: "bg-accent",
       icon: Smartphone
     }
   ];
@@ -173,10 +173,10 @@ const Projects = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 font-['Gilmer']">
-            Featured <span className="text-[#ff4940]">Projects</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-theme-primary mb-4 font-['Gilmer']">
+            Featured <span className="text-accent">Projects</span>
           </h2>
-          <p className="text-xl text-white/80 max-w-3xl mx-auto font-['Gilmer']">
+          <p className="text-xl text-theme-secondary max-w-3xl mx-auto font-['Gilmer']">
             Showcasing innovative mobile applications and solutions that demonstrate technical excellence and user-centric design
           </p>
         </motion.div>
@@ -190,11 +190,11 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group bg-white/10 rounded-3xl overflow-hidden border border-white/20 hover:border-[#ff4940]/10 transition-all duration-300 backdrop-blur-sm"
+              className="group bg-glass rounded-3xl overflow-hidden border border-glass hover:border-accent/10 transition-all duration-300 backdrop-blur-sm"
             >
               {/* Project Image */}
-              <div className="relative h-48 bg-[#ff4940]/30 overflow-hidden">
-                <div className="absolute inset-0 bg-[#ff4940]/12"></div>
+              <div className="relative h-48 bg-accent/30 overflow-hidden">
+                <div className="absolute inset-0 bg-accent/12"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className={`w-16 h-16 rounded-full ${project.color} p-4 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300`}>
                     <project.icon className="w-8 h-8 text-white" />
@@ -203,7 +203,7 @@ const Projects = () => {
                 
                 {/* Category Badge */}
                 <div className="absolute top-4 left-4">
-                  <span className={`px-4 py-2 rounded-full text-xs font-medium bg-[#ff4940]/90 text-white font-['Gilmer']`}>
+                  <span className={`px-4 py-2 rounded-full text-xs font-medium bg-accent/90 text-white font-['Gilmer']`}>
                     {project.category}
                   </span>
                 </div>
@@ -221,10 +221,10 @@ const Projects = () => {
 
               {/* Project Content */}
               <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#ff4940] transition-colors duration-300 font-['Gilmer']">
+                <h3 className="text-xl font-bold text-theme-primary mb-2 group-hover:text-accent transition-colors duration-300 font-['Gilmer']">
                   {project.title}
                 </h3>
-                <p className="text-white/80 text-sm mb-4 leading-relaxed font-['Gilmer']">
+                <p className="text-theme-secondary text-sm mb-4 leading-relaxed font-['Gilmer']">
                   {project.description}
                 </p>
 
@@ -233,7 +233,7 @@ const Projects = () => {
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 bg-[#ff4940]/20 rounded-full text-xs text-[#ff4940] border border-[#ff4940]/30 font-['Gilmer']"
+                      className="px-3 py-1 bg-accent/20 rounded-full text-xs text-accent border border-accent/30 font-['Gilmer']"
                     >
                       {tech}
                     </span>
@@ -242,11 +242,11 @@ const Projects = () => {
 
                 {/* Key Features */}
                 <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-white mb-2 font-['Gilmer']">Key Features:</h4>
+                  <h4 className="text-sm font-semibold text-theme-primary mb-2 font-['Gilmer']">Key Features:</h4>
                   <ul className="space-y-1">
                     {project.features.slice(0, 3).map((feature, i) => (
-                      <li key={i} className="text-xs text-white/80 flex items-center font-['Gilmer']">
-                        <div className="w-1 h-1 bg-[#ff4940] rounded-full mr-2"></div>
+                      <li key={i} className="text-xs text-theme-secondary flex items-center font-['Gilmer']">
+                        <div className="w-1 h-1 bg-accent rounded-full mr-2"></div>
                         {feature}
                       </li>
                     ))}
@@ -259,7 +259,7 @@ const Projects = () => {
                     <Button
                       variant="outline"
                       size="sm"
-                      className="border-[#ff4940]/50 text-[#ff4940] hover:bg-[#ff4940]/10 flex items-center space-x-1 font-['Gilmer']"
+                      className="border-accent/50 text-accent hover:bg-accent/10 flex items-center space-x-1 font-['Gilmer']"
                     >
                       <Github className="w-4 h-4" />
                       <span>Code</span>
@@ -268,7 +268,7 @@ const Projects = () => {
                   {project.links.live && (
                     <Button
                       size="sm"
-                      className="bg-[#ff4940] hover:bg-[#ff4940]/80 text-white flex items-center space-x-1 font-['Gilmer']"
+                      className="bg-accent hover:bg-accent/80 text-white flex items-center space-x-1 font-['Gilmer']"
                     >
                       <ExternalLink className="w-4 h-4" />
                       <span>Live Demo</span>
@@ -288,13 +288,13 @@ const Projects = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h3 className="text-2xl font-bold text-white mb-8 font-['Gilmer']">Project Impact</h3>
+          <h3 className="text-2xl font-bold text-theme-primary mb-8 font-['Gilmer']">Project Impact</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { number: "6+", label: "Major Projects", color: "text-[#ff4940]" },
-              { number: "8K+", label: "Total Users", color: "text-[#ff4940]" },
-              { number: "34K+", label: "Total Downloads", color: "text-[#ff4940]" },
-              { number: "4.7", label: "Avg Rating", color: "text-[#ff4940]" }
+              { number: "6+", label: "Major Projects", color: "text-accent" },
+              { number: "8K+", label: "Total Users", color: "text-accent" },
+              { number: "34K+", label: "Total Downloads", color: "text-accent" },
+              { number: "4.7", label: "Avg Rating", color: "text-accent" }
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -302,10 +302,10 @@ const Projects = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="p-6 bg-white/10 rounded-full border border-white/20"
+                className="p-6 bg-glass rounded-full border border-glass"
               >
                 <div className={`text-3xl font-bold ${stat.color} mb-2 font-['Gilmer']`}>{stat.number}</div>
-                <div className="text-white/80 text-sm font-['Gilmer']">{stat.label}</div>
+                <div className="text-theme-secondary text-sm font-['Gilmer']">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -319,21 +319,21 @@ const Projects = () => {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <div className="max-w-3xl mx-auto p-8 bg-white/10 rounded-3xl border border-[#ff4940]/20">
-            <h3 className="text-2xl font-bold text-white mb-4 font-['Gilmer']">Interested in Working Together?</h3>
-            <p className="text-white/80 mb-6 font-['Gilmer']">
+          <div className="max-w-3xl mx-auto p-8 bg-glass rounded-3xl border border-accent/20">
+            <h3 className="text-2xl font-bold text-theme-primary mb-4 font-['Gilmer']">Interested in Working Together?</h3>
+            <p className="text-theme-secondary mb-6 font-['Gilmer']">
               I'm always excited to work on new projects and collaborate with innovative teams. 
               Let's discuss how we can bring your mobile app ideas to life.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button
-                className="bg-[#ff4940] hover:bg-[#ff4940]/80 text-white px-8 py-3 rounded-full font-medium font-['Gilmer']"
+                className="bg-accent hover:bg-accent/80 text-white px-8 py-3 rounded-full font-medium font-['Gilmer']"
               >
                 Start a Project
               </Button>
               <Button
                 variant="outline"
-                className="border-[#ff4940] text-[#ff4940] hover:bg-[#ff4940]/10 px-8 py-3 rounded-full font-medium font-['Gilmer']"
+                className="border-accent text-accent hover:bg-accent/10 px-8 py-3 rounded-full font-medium font-['Gilmer']"
               >
                 View All Projects
               </Button>
